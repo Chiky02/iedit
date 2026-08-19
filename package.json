@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run prisma:generate && next build",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build",
     "start": "next start",
     "lint": "eslint",
     "db:create": "node scripts/create-db.js",
@@ -13,7 +14,7 @@
     "migrate:prod": "prisma migrate deploy",
     "prisma:generate": "prisma generate",
     "prisma:seed": "tsx prisma/seed.ts",
-    "setup": "npm install && npm run db:create && npm run migrate && npm run prisma:seed && echo '✅ Setup completado!'"
+    "setup": "npm install && npm run prisma:generate"
   },
   "postinstall": "npm run prisma:generate",
   "dependencies": {

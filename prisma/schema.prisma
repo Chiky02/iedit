@@ -3,9 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL") // pooled: pooled.db.prisma.io (app)
+  directUrl = env("DIRECT_URL")   // direct: db.prisma.io (migraciones / seed)
 }
 
 model User {
